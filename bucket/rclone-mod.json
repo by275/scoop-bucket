@@ -1,0 +1,76 @@
+{
+    "version": "1.69.0-221",
+    "description": "Sync files and directories to and from multiple cloud / FTP / HTTP hosters.",
+    "homepage": "https://github.com/wiserain/rclone",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/wiserain/rclone/releases/download/v1.69.0-221/rclone-v1.69.0-221-windows-amd64.zip",
+            "hash": "6da5d58d77d8ef18dd03db5bd6b0b3050affe52f476dcc7db248256b42e5b44c",
+            "extract_dir": "rclone-v1.69.0-221-windows-amd64"
+        },
+        "32bit": {
+            "url": "https://github.com/wiserain/rclone/releases/download/v1.69.0-221/rclone-v1.69.0-221-windows-386.zip",
+            "hash": "ea69940a4a9c826b57cef802ff3a15558b04cc9e653dfce1c0c1741e8b7f9b46",
+            "extract_dir": "rclone-v1.69.0-221-windows-386"
+        },
+        "arm64": {
+            "url": "https://github.com/wiserain/rclone/releases/download/v1.69.0-221/rclone-v1.69.0-221-windows-arm64.zip",
+            "hash": "c533436beccfc95ac3cfdf2794db80ba381af32d49add46d7447a7dd7a36c7a1",
+            "extract_dir": "rclone-v1.69.0-221-windows-arm64"
+        }
+    },
+    "pre_install": [
+        "if (!(Test-Path \"$persist_dir\\rclone.conf\") -or !(Get-Item \"$persist_dir\\rclone.conf\").Length) {",
+        "   New-Item \"$persist_dir\\rclone.conf\" -ItemType File -Force | Out-Null",
+        "",
+        "   $tilde = if ($env:HOME) {",
+        "       $env:HOME",
+        "   } elseif ($env:USERPROFILE) {",
+        "       $env:USERPROFILE",
+        "   } else {",
+        "       \"$env:HOMEDRIVE%\\$env:HOMEPATH\"",
+        "   }",
+        "",
+        "   $importConf = if (Test-Path \"$env:APPDATA\\rclone\\rclone.conf\") {",
+        "       \"$env:APPDATA\\rclone\\rclone.conf\"",
+        "   } elseif (Test-Path \"$env:XDG_CONFIG_HOME\\rclone\\rclone.conf\") {",
+        "       \"$env:XDG_CONFIG_HOME\\rclone\\rclone.conf\"",
+        "   } elseif (Test-Path \"$tilde\\.config\\rclone\\rclone.conf\") {",
+        "       \"$tilde\\.config\\rclone\\rclone.conf\"",
+        "   } elseif (Test-Path \"$tilde\\.rclone.conf\") {",
+        "       \"$tilde\\.rclone.conf\"",
+        "   }",
+        "",
+        "   if ($importConf -and (Test-Path $importConf)) {",
+        "       Copy-Item $importConf \"$persist_dir\\rclone.conf\"",
+        "       Write-Host \"Imported existing rclone.conf from $importConf.\" -ForegroundColor Yellow",
+        "   }",
+        "}"
+    ],
+    "uninstaller": {
+        "script": "if ((Test-Path \"$dir\\rclone.conf\") -and !(Get-Item \"$dir\\rclone.conf\").LinkType -and (Test-Path $persist_dir)) { Copy-Item \"$dir\\rclone.conf\" $persist_dir }"
+    },
+    "bin": "rclone.exe",
+    "persist": "rclone.conf",
+    "checkver": {
+        "github": "https://github.com/wiserain/rclone",
+        "regex": "\\\/releases\\\/tag\\\/(?:v|V)?([\\d.-]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/wiserain/rclone/releases/download/v$version/rclone-v$version-windows-amd64.zip",
+                "extract_dir": "rclone-v$version-windows-amd64"
+            },
+            "32bit": {
+                "url": "https://github.com/wiserain/rclone/releases/download/v$version/rclone-v$version-windows-386.zip",
+                "extract_dir": "rclone-v$version-windows-386"
+            },
+            "arm64": {
+                "url": "https://github.com/wiserain/rclone/releases/download/v$version/rclone-v$version-windows-arm64.zip",
+                "extract_dir": "rclone-v$version-windows-arm64"
+            }
+        }
+    }
+}
