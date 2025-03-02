@@ -1,23 +1,23 @@
 {
-    "version": "1.69.0-221",
+    "version": "1.69.1-226",
     "description": "Sync files and directories to and from multiple cloud / FTP / HTTP hosters.",
     "homepage": "https://github.com/wiserain/rclone",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/wiserain/rclone/releases/download/v1.69.0-221/rclone-v1.69.0-221-windows-amd64.zip",
-            "hash": "6da5d58d77d8ef18dd03db5bd6b0b3050affe52f476dcc7db248256b42e5b44c",
-            "extract_dir": "rclone-v1.69.0-221-windows-amd64"
+            "url": "https://github.com/wiserain/rclone/releases/download/v1.69.1-226/rclone-v1.69.1-226-windows-amd64.zip",
+            "hash": "74412515e07a0931f0faceafbbe2470f70abbe9a41be14b142251c68722464f5",
+            "extract_dir": "rclone-v1.69.1-226-windows-amd64"
         },
         "32bit": {
-            "url": "https://github.com/wiserain/rclone/releases/download/v1.69.0-221/rclone-v1.69.0-221-windows-386.zip",
-            "hash": "ea69940a4a9c826b57cef802ff3a15558b04cc9e653dfce1c0c1741e8b7f9b46",
-            "extract_dir": "rclone-v1.69.0-221-windows-386"
+            "url": "https://github.com/wiserain/rclone/releases/download/v1.69.1-226/rclone-v1.69.1-226-windows-386.zip",
+            "hash": "024a30237d3124967999c9e669e064b9875eb6489387b4f0a5b351d3138487d8",
+            "extract_dir": "rclone-v1.69.1-226-windows-386"
         },
         "arm64": {
-            "url": "https://github.com/wiserain/rclone/releases/download/v1.69.0-221/rclone-v1.69.0-221-windows-arm64.zip",
-            "hash": "c533436beccfc95ac3cfdf2794db80ba381af32d49add46d7447a7dd7a36c7a1",
-            "extract_dir": "rclone-v1.69.0-221-windows-arm64"
+            "url": "https://github.com/wiserain/rclone/releases/download/v1.69.1-226/rclone-v1.69.1-226-windows-arm64.zip",
+            "hash": "82924fa963786fec790cb3d1ceccb7dea99421785bc5ed90ca46013d667cd420",
+            "extract_dir": "rclone-v1.69.1-226-windows-arm64"
         }
     },
     "pre_install": [
@@ -55,7 +55,7 @@
     "persist": "rclone.conf",
     "checkver": {
         "github": "https://github.com/wiserain/rclone",
-        "regex": "\\\/releases\\\/tag\\\/(?:v|V)?([\\d.-]+)"
+        "regex": "\\/releases\\/tag\\/(?:v|V)?([\\d.-]+)"
     },
     "autoupdate": {
         "architecture": {
