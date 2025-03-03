@@ -39,7 +39,7 @@
         "AutoHotkey.ahk"
     ],
     "checkver": {
-        "github": "https://github.com/AutoHotkey/AutoHotkey",
+        "url": "https://api.github.com/repos/Autohotkey/Autohotkey/releases",
         "regex": "\\/releases\\/tag\\/(?:v|V)?(1\\.1\\.[\\d.]+)"
     },
     "autoupdate": {
