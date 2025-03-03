@@ -41,7 +41,8 @@
         "AutoHotkey.ahk"
     ],
     "checkver": {
-        "url": "https://www.autohotkey.com/download/1.1/version.txt"
+        "url": "https://www.autohotkey.com/download/1.1/version.txt",
+        "regex": "(1\\.1\\.[\\d.]+)"
     },
     "autoupdate": {
         "url": "https://www.autohotkey.com/download/1.1/AutoHotkey_$version.zip",
