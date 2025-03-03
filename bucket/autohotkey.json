@@ -33,6 +33,9 @@
             ]
         }
     },
+    "pre_install": [
+        "ForEach ($emptyFile in $manifest.persist | Where-Object { $_ -ne 'Lib' }) {New-Item \"$dir\\$emptyFile\" -ItemType file -ErrorAction SilentlyContinue | Out-Null}"
+    ],
     "persist": [
         "Lib",
         "AutoHotkey.ahk"
