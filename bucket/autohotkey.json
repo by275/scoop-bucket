@@ -1,18 +1,17 @@
 {
-    "version": "1.1.36.02",
+    "version": "1.1.37.02",
     "description": "The ultimate automation scripting language for Windows.",
     "homepage": "https://www.autohotkey.com/",
     "license": "GPL-2.0-or-later",
-    "url": "https://github.com/AutoHotkey/AutoHotkey/releases/download/v1.1.36.02/AutoHotkey_1.1.36.02_setup.exe#/dl.7z",
-    "hash": "af7b8e60b4b54f5f85e6b207ac51926cb076aa4319b8e4c72e59b98c85818cae",
+    "url": "https://github.com/AutoHotkey/AutoHotkey/releases/download/v1.1.37.02/AutoHotkey_1.1.37.02_setup.exe#/dl.7z",
+    "hash": "49a48e879f7480238d2fe17520ac19afe83685aac0b886719f9e1eac818b75cc",
     "architecture": {
         "64bit": {
             "installer": {
-                "script":
-                    [
-                        "Remove-Item -Recurse -Force \"$dir\\AutoHotkeyU32.exe\", \"$dir\\Compiler\\Unicode 32-bit.bin\"",
-                        "Rename-Item -Path \"$dir\\AutoHotkeyU64.exe\" -NewName \"AutoHotkey.exe\"",
-                        "Rename-Item -Path \"$dir\\Compiler\\Unicode 64-bit.bin\" -NewName \"AutoHotkeySC.bin\""
+                "script": [
+                    "Remove-Item -Recurse -Force \"$dir\\AutoHotkeyU32.exe\", \"$dir\\Compiler\\Unicode 32-bit.bin\"",
+                    "Rename-Item -Path \"$dir\\AutoHotkeyU64.exe\" -NewName \"AutoHotkey.exe\"",
+                    "Rename-Item -Path \"$dir\\Compiler\\Unicode 64-bit.bin\" -NewName \"AutoHotkeySC.bin\""
                 ]
             }
         },
