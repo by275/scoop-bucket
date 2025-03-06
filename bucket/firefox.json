@@ -1,0 +1,41 @@
+{
+    "version": "135.0.1",
+    "description": "Popular open source web browser. (tete009 private build)",
+    "homepage": "http://www1.plala.or.jp/tete009/en-US/software.html#FIREFOX",
+    "license": "MPL-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/by275/scoop-bucket/releases/download/firefox-tete009/firefox-135.0.1-2025021619.en-US.win32-tete009-x64-sse3-cspgo.7z",
+            "hash": "d1ce3d087a88f8e451c13497b94576028a0049c6c28a700f92e1a7c0295b17fe",
+            "extract_dir": "firefox-135.0.1-2025021619.en-US.win32-tete009-x64-sse3-cspgo",
+            "bin": "firefox.exe",
+            "shortcuts": [
+                [
+                    "firefox.exe",
+                    "Firefox"
+                ]
+            ]
+        }
+    },
+    "pre_install": [
+        "\"[General]`r`Portable=1\" | Out-File -Encoding ASCII \"$dir\\tmemutil.ini\"",
+        "ForEach ($emptyFile in $manifest.persist | Where-Object { $_ -ne 'PortableData' }) {New-Item \"$dir\\$emptyFile\" -ItemType file -ErrorAction SilentlyContinue | Out-Null}"
+    ],
+    "persist": [
+        "PortableData",
+        "tmemutil.ini"
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/by275/scoop-bucket/releases",
+        "regex": "firefox-([\\d.]+)-(?<date>\\d+)\\.en-US\\.win32-tete009-x64(?<buildtag>[\\w-]+)?\\.7z",
+        "reverse": true
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/by275/scoop-bucket/releases/download/firefox-tete009/firefox-$version-$matchDate.en-US.win32-tete009-x64$matchBuildtag.7z",
+                "extract_dir": "firefox-$version-$matchDate.en-US.win32-tete009-x64$matchBuildtag"
+            }
+        }
+    }
+}
