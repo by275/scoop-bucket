@@ -1,23 +1,23 @@
 {
-    "version": "1.73.1-275",
+    "version": "1.73.2-286",
     "description": "Sync files and directories to and from multiple cloud / FTP / HTTP hosters.",
     "homepage": "https://github.com/wiserain/rclone",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/wiserain/rclone/releases/download/v1.73.1-275/rclone-v1.73.1-275-windows-amd64.zip",
-            "hash": "f6578b5be0b7f35ad75cc243966ac0a2f554ef8d7dfcdc398ae949012582aff0",
-            "extract_dir": "rclone-v1.73.1-275-windows-amd64"
+            "url": "https://github.com/wiserain/rclone/releases/download/v1.73.2-286/rclone-v1.73.2-286-windows-amd64.zip",
+            "hash": "0e2c78c9a3c56eeb19697aedf6d3946bd333628357b0d54cbbe2c2129f91cc19",
+            "extract_dir": "rclone-v1.73.2-286-windows-amd64"
         },
         "32bit": {
-            "url": "https://github.com/wiserain/rclone/releases/download/v1.73.1-275/rclone-v1.73.1-275-windows-386.zip",
-            "hash": "13d8921f7e547f08b57bbdbb823981a4855dc0076c293a0835304de028330c1c",
-            "extract_dir": "rclone-v1.73.1-275-windows-386"
+            "url": "https://github.com/wiserain/rclone/releases/download/v1.73.2-286/rclone-v1.73.2-286-windows-386.zip",
+            "hash": "af98ed7f795bd5d636f2b52c2b7affb885aed092bb7d8f0d019f75f5f902db5d",
+            "extract_dir": "rclone-v1.73.2-286-windows-386"
         },
         "arm64": {
-            "url": "https://github.com/wiserain/rclone/releases/download/v1.73.1-275/rclone-v1.73.1-275-windows-arm64.zip",
-            "hash": "d2fcc8a1dfbf7542c25c13f15dd4dbfa3ce859ea70a9ee0b58960ab554f309e0",
-            "extract_dir": "rclone-v1.73.1-275-windows-arm64"
+            "url": "https://github.com/wiserain/rclone/releases/download/v1.73.2-286/rclone-v1.73.2-286-windows-arm64.zip",
+            "hash": "c847afa035a5d535b2bb61fcb72bef0880ff1d54b179f654c0187b41e83ec7f8",
+            "extract_dir": "rclone-v1.73.2-286-windows-arm64"
         }
     },
     "pre_install": [
