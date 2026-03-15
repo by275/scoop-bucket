@@ -1,0 +1,41 @@
+name: Firefox Release Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: firefox-release-sync
+  cancel-in-progress: false
+
+jobs:
+  sync-release:
+    name: Append new Firefox builds to release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@main
+
+      - name: Install rclone
+        run: |
+          curl -fsSL https://rclone.org/install.sh | sudo bash
+
+      - name: Sync missing release assets
+        env:
+          RELEASE_TAG: firefox-tete009
+          ASSET_PATTERN: ^firefox-.*\.7z$
+          RCLONE_CONFIG: ${{ github.workspace }}/firefox/rclone.conf
+          RCLONE_CONFIG_PASS: ${{ secrets.RCLONE_CONFIG_PASS }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Validate rclone config
+          test -n "$RCLONE_CONFIG_PASS"
+          test -f "$RCLONE_CONFIG"
+          rclone config encryption check --config "$RCLONE_CONFIG"
+
+          # Run sync release
+          ./firefox/sync-release.sh
