@@ -1,13 +1,13 @@
 {
-    "version": "149.0.2",
+    "version": "150.0",
     "description": "Popular open source web browser. (tete009 private build)",
     "homepage": "http://www1.plala.or.jp/tete009/en-US/software.html#FIREFOX",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/by275/scoop-bucket/releases/download/firefox-tete009/firefox-149.0.2-2026040314.en-US.win32-tete009-x64-sse3-cspgo.7z",
-            "hash": "ce72d53cc218f946bc10964b3baac195cbf68387b511c00f9dd1f123f4f65bb2",
-            "extract_dir": "firefox-149.0.2-2026040314.en-US.win32-tete009-x64-sse3-cspgo",
+            "url": "https://github.com/by275/scoop-bucket/releases/download/firefox-tete009/firefox-150.0-2026041519.en-US.win32-tete009-x64-sse3-cspgo.7z",
+            "hash": "1f5a56ca8101556a207ef522bae6452207a84bfeeb6fdbf42d5aefbe46adeefd",
+            "extract_dir": "firefox-150.0-2026041519.en-US.win32-tete009-x64-sse3-cspgo",
             "bin": "firefox.exe",
             "shortcuts": [
                 [
