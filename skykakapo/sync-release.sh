@@ -2,10 +2,11 @@
 
 set -euo pipefail
 
-release_tag="${RELEASE_TAG:-firefox-tete009}"
-remote_path="tete009:"
-asset_pattern="${ASSET_PATTERN:-^firefox-.*\\.7z$}"
-download_dir="${RUNNER_TEMP:-/tmp}/firefox-release-assets"
+release_tag="${RELEASE_TAG:-skykakapo-tete009}"
+release_title="${RELEASE_TITLE:-SkyKakapo (tete009 build)}"
+remote_path="${REMOTE_PATH:-tete009:}"
+asset_pattern="${ASSET_PATTERN:-(?i)^skykakapo-.*\\.7z$}"
+download_dir="${RUNNER_TEMP:-/tmp}/skykakapo-release-assets"
 
 mkdir -p "$download_dir"
 
@@ -26,7 +27,13 @@ if ((${#candidate_assets[@]} == 0)); then
 fi
 
 echo "Reading current assets from release $release_tag"
-release_json="$(gh release view "$release_tag" --json assets)"
+if ! release_json="$(gh release view "$release_tag" --json assets 2>/dev/null)"; then
+  echo "Creating release $release_tag"
+  gh release create "$release_tag" \
+    --title "$release_title" \
+    --notes "Unofficial release mirror of SkyKakapo builds by tete009."
+  release_json='{"assets":[]}'
+fi
 
 declare -A existing_assets=()
 while IFS= read -r asset_name; do
