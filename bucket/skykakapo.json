@@ -1,13 +1,13 @@
 {
-    "version": "159.0.1",
+    "version": "160.0",
     "description": "Firefox-based web browser optimized by tete009.",
     "homepage": "https://tete009.pages.dev/en-US/software",
     "license": "MPL-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://downloads.sourceforge.net/project/skykakapo/159.0.1/skykakapo-159.0.1-2026110319.en-US.win64-sse3-cspgo.7z",
-            "hash": "d0cf7a42ef47afb2ef7dda87480439e074656f1fe5bd55f4b23f8d3e9ca5f480",
-            "extract_dir": "skykakapo-159.0.1-2026110319.en-US.win64-sse3-cspgo",
+            "url": "https://downloads.sourceforge.net/project/skykakapo/160.0/skykakapo-160.0-2026110919.en-US.win64-sse3-cspgo.7z",
+            "hash": "sha1:8159b4b18626fd73d5afe55de31da1602cec5516",
+            "extract_dir": "skykakapo-160.0-2026110919.en-US.win64-sse3-cspgo",
             "bin": "skykakapo.exe",
             "shortcuts": [
                 [
