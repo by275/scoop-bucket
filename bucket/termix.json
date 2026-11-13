@@ -27,15 +27,15 @@
     "checkver": {
         "url": "https://api.github.com/repos/Termix-SSH/Termix/releases/latest",
         "jsonpath": "$.tag_name",
-        "regex": "release-([\\d.]+)-tag"
+        "regex": "^(?:release-|v)([\\d.]+)(?:-tag)?$"
     },
     "autoupdate": {
         "architecture": {
             "32bit": {
-                "url": "https://github.com/Termix-SSH/Termix/releases/download/release-$version-tag/termix_windows_ia32_portable.zip"
+                "url": "https://github.com/Termix-SSH/Termix/releases/download/v$version/termix_windows_ia32_portable.zip"
             },
             "64bit": {
-                "url": "https://github.com/Termix-SSH/Termix/releases/download/release-$version-tag/termix_windows_x64_portable.zip"
+                "url": "https://github.com/Termix-SSH/Termix/releases/download/v$version/termix_windows_x64_portable.zip"
             }
         }
     }
