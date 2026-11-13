@@ -54,8 +54,7 @@
     "bin": "rclone.exe",
     "persist": "rclone.conf",
     "checkver": {
-        "github": "https://github.com/wiserain/rclone",
-        "regex": "\\/releases\\/tag\\/(?:v|V)?([\\d.-]+)"
+        "github": "https://github.com/wiserain/rclone"
     },
     "autoupdate": {
         "architecture": {
