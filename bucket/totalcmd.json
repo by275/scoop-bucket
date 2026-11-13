@@ -57,15 +57,15 @@
     ],
     "checkver": {
         "url": "https://www.ghisler.com/download.htm",
-        "regex": "Download\\s+version\\s+([\\w.]+) of Total Commander"
+        "regex": "Download\\s+version\\s+([\\w.]+) of Total Commander[\\s\\S]*?https://totalcommander\\.ch/(?<buildId>\\d+)/tcmd\\k<buildId>x32_64\\.exe"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://totalcommander.ch/$cleanVersion/tcmd$cleanVersionx32_64.exe"
+                "url": "https://totalcommander.ch/$matchBuildId/tcmd$matchBuildIdx32_64.exe"
             },
             "32bit": {
-                "url": "https://totalcommander.ch/$cleanVersion/tcmd$cleanVersionx32_64.exe"
+                "url": "https://totalcommander.ch/$matchBuildId/tcmd$matchBuildIdx32_64.exe"
             }
         }
     }
